@@ -1,0 +1,63 @@
+﻿@page "/complete"
+@using Microsoft.AspNetCore.ProtectedBrowserStorage
+@using site.Infrastructure
+
+<h3>Complete</h3>
+
+
+Thank you @Status.Name, you completed this in @Status.Completed.ToString("c")
+
+            Please provide the following code to your teacher;
+<br />
+<input type="text" id="exitCode" @bind-value="ExitCode" />
+<button type="button" onclick="copyToClipboard('exitCode')">Copy To Clipboard</button>
+@code {
+    [Inject] protected ProtectedSessionStorage ProtectedSessionStore { get; set; }
+    [Inject] protected CodeGenerator Generator { get; set; }
+
+    protected string ExitCode { get; set; }
+    private GameCompleteStatus Status { get; set; } = new GameCompleteStatus();
+
+    protected string Name { get; set; }
+    protected TimeSpan Completed { get; set; }
+    protected string EntryCode { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        base.OnAfterRenderAsync(firstRender);
+
+        if (firstRender)
+        {
+            Name = await ProtectedSessionStore.GetAsync<string>("name");
+
+            DateTime started = await ProtectedSessionStore.GetAsync<DateTime>("start");
+
+            Completed = DateTime.Now.Subtract(started);
+
+            EntryCode = await ProtectedSessionStore.GetAsync<string>("entry");
+
+            Status = new GameCompleteStatus()
+            {
+                Name = Name,
+                Completed = Completed,
+                EntryCode = EntryCode,
+                IpAddress = "127.0.0.1"
+            };
+
+            ExitCode = Generator.GenerateExitCode(Status);
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+
+}

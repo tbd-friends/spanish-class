@@ -1,0 +1,80 @@
+{
+  "type": "DragAndDrop",
+  "style": {
+    "background": "url(css/images/house_w_rooms.jpg) no-repeat",
+    "width": "1020px",
+    "height": "900px"
+  },
+  "zones": [
+    {
+      "name": "bedroom",
+      "style": {
+        "position": "absolute",
+        "top": "250px",
+        "left": "250px",
+        "width": "280px",
+        "height": "130px",
+        "border": "1px solid #000"
+      },
+      "requires": [
+        "bedroom",
+        "make bed"
+      ]
+    },
+    {
+      "name": "movieroom",
+      "style": {
+        "position": "absolute",
+        "top": "250px",
+        "left": "540px",
+        "width": "275px",
+        "height": "130px",
+        "border": "1px solid #000"
+      },
+      "requires": [
+        "movie room",
+        "dusting"
+      ]
+    },
+    {
+      "name": "living-room",
+      "style": {
+        "position": "absolute",
+        "top": "400px",
+        "left": "250px",
+        "width": "280px",
+        "height": "125px",
+        "border": "1px solid #000"
+      },
+      "requires": [
+        "living room",
+        "vacuuming"
+      ]
+    },
+    {
+      "name": "bathroom",
+      "style": {
+        "position": "absolute",
+        "top": "400px",
+        "left": "540px",
+        "width": "275px",
+        "height": "125px",
+        "border": "1px solid #000"
+      },
+      "requires": [
+        "bathroom",
+        "clean shower"
+      ]
+    }
+  ],
+  "dictionary": [
+    "bedroom",
+    "make bed",
+    "movie room",
+    "dusting",
+    "living room",
+    "vacuuming",
+    "bathroom",
+    "clean shower"
+  ]
+}

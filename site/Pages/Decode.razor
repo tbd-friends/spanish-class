@@ -1,0 +1,25 @@
+﻿@page "/decode/{code}/{exitCode}"
+@using site.Infrastructure
+
+<h3>Decode</h3>
+
+<div>@Status.Name</div>
+<div>@Status.Completed</div>
+<div>@Status.EntryCode</div>
+<div>@Status.IpAddress</div>
+
+@code {
+    [Inject] public CodeGenerator Service { get; set; }
+    [Parameter] public string Code { get; set; }
+    [Parameter] public string ExitCode { get; set; }
+
+    public GameCompleteStatus Status { get; set; }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        Status = Service.DecodeExitCode(Code, ExitCode);
+    }
+
+}

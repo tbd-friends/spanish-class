@@ -1,0 +1,51 @@
+{
+  "type": "AorB",
+  "questions": [
+    {
+      "text": "The girls danced at the party",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "She buys cake",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "I watched TV yesterday",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "He draws pictures",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "We cooked dinner yesterday",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "Last summer I went on vacation",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "Greg called his grandmother on the phone last week",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "Tiffany walks her dog every day",
+      "options": [ "past", "present" ]
+    },
+    {
+      "text": "The students do their homework on the dining room table",
+      "options": [ "past", "present" ]
+    }
+  ],
+  "answers": [
+    {
+      "description": "Present Tense",
+      "expected": "4"
+    },
+    {
+      "description": "Past Tense",
+      "expected": 5
+    }
+  ]
+}

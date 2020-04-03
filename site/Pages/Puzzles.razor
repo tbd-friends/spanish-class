@@ -1,0 +1,15 @@
+﻿@page "/puzzle1"
+@using site.Puzzles;
+
+<PuzzleGroup OnPuzzlesCompleted="PuzzlesAllCompleted" />
+
+@code {
+
+    [Inject]
+    private NavigationManager Navigation { get; set; }
+
+    private void PuzzlesAllCompleted()
+    {
+        Navigation.NavigateTo("complete");
+    }
+}

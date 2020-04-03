@@ -1,0 +1,28 @@
+﻿@inherits PictureCountsModel
+@using site.Models
+@using Blazor.DragDrop.Core
+@using Microsoft.Extensions.DependencyInjection
+@using site.Infrastructure
+
+<Dropzone class="houses" Name="AnswerOptions">
+    @foreach (var answer in Puzzle.Options)
+    {
+        <Draggable Tag="@answer.Value">
+            <div style="@(Style.FromDictionary(Puzzle.Style))">
+                @answer.Description
+            </div>
+        </Draggable>
+    }
+</Dropzone>
+<div>
+    @((MarkupString)Puzzle.Text)
+</div>
+
+<Dropzone class="answers" Name="Answers">
+    &nbsp;
+</Dropzone>
+
+@if (IsComplete)
+{
+    <button @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
+}

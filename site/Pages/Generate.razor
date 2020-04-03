@@ -1,0 +1,17 @@
+﻿@page "/generate"
+@using site.Infrastructure
+
+<h3>Generate</h3>
+
+<div>
+    @for (int idx = 0; idx < 10; idx++)
+    {
+        var entrycode = Generator.Generate(16);
+
+        <div><a href="landing/@entrycode">@entrycode</a></div>
+    }
+</div>
+
+@code {
+    [Inject] private CodeGenerator Generator { get; set; }
+}

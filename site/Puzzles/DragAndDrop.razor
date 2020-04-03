@@ -1,0 +1,30 @@
+﻿@inherits DragAndDropModel
+@using site.Models
+@using Blazor.DragDrop.Core;
+@using site.Infrastructure
+<div class="drag-drop-puzzle">
+    <div class="word-gutter">
+        <Dropzone Name="gutter">
+            @foreach (var word in Puzzle.Dictionary)
+            {
+                <Draggable Tag="word"><div class="word">@word</div></Draggable>
+            }
+        </Dropzone>
+    </div>
+
+    <div class="puzzle-source" style="@Style.FromDictionary(Puzzle.Style)">
+        @foreach (var zone in Puzzle.Zones)
+        {
+            <div style="@Style.FromDictionary(zone.Style)">
+                <Dropzone Name="@zone.Name" MaxItems="2">
+                    &nbsp;
+                </Dropzone>
+            </div>
+        }
+    </div>
+</div>
+
+@if (IsComplete)
+{
+    <button @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
+}

@@ -1,0 +1,15 @@
+﻿@inherits LandingPage
+@page "/landing/{EntryCode}"
+
+<h3>Welcome</h3>
+<div>
+    <EditForm Model="@Model" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator />
+        <ValidationSummary />
+        <div>
+            <label for="name">Name</label>
+            <input type="text" id="name" @bind="Model.Name" />
+        </div>
+        <button type="submit">Begin</button>
+    </EditForm>
+</div>

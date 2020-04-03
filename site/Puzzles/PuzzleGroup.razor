@@ -1,0 +1,46 @@
+﻿@using site.Data
+@using site.Models
+@if (CurrentPuzzle != null)
+{
+    switch (CurrentPuzzle.Type)
+    {
+        case "AorB":
+            <AorB OnComplete="OnPuzzleComplete" Puzzle="(AorBPuzzle)CurrentPuzzle" />
+            break;
+        case "PictureCounts":
+            <PictureCounts OnComplete="OnPuzzleComplete" Puzzle="(PictureCountsPuzzle)CurrentPuzzle" />
+            break;
+        case "DragAndDrop":
+            <DragAndDrop OnComplete="OnPuzzleComplete" Puzzle="(DragAndDropPuzzle)CurrentPuzzle" />
+            break;
+    }
+}
+
+@code {
+
+    [Parameter] public EventCallback OnPuzzlesCompleted { get; set; }
+    [Inject] public PuzzleService Service { get; set; }
+
+    private Puzzle CurrentPuzzle { get; set; }
+    private PuzzleSet Set { get; set; }
+
+    protected void OnPuzzleComplete()
+    {
+        CurrentPuzzle.Status = true;
+        CurrentPuzzle = Set.Puzzles.FirstOrDefault(f => !f.Status);
+
+        if (CurrentPuzzle == null)
+        {
+            OnPuzzlesCompleted.InvokeAsync(this);
+        }
+    }
+
+    protected override void OnInitialized()
+    {
+        base.OnInitialized();
+
+        Set = Service.LoadPuzzleSet("set_1.json");
+
+        CurrentPuzzle = Set.Puzzles.First();
+    }
+}

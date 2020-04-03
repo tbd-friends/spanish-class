@@ -1,0 +1,11 @@
+﻿@if (Options != null && Options.Any())
+{
+    @foreach (var option in Options)
+    {
+        <label><input type="radio" name="@Name" value="@option" />@option</label>
+    }
+}
+@code {
+    [Parameter] public string Name { get; set; }
+    [Parameter] public IEnumerable<string> Options { get; set; }
+}
