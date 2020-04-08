@@ -1,21 +1,29 @@
 ﻿@using site.Models
-<div class="prompts">
+<ul class="list-group">
     @foreach (var question in Puzzle.Questions)
     {
-        <div class="prompt">@question.Text <RadioGroup Name="@Guid.NewGuid().ToString()" Options="@question.Options" /></div>
+        <li class="list-group-item">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">@question.Text</div>
+                <div class="col-md-6 col-sm-12">
+                    <RadioGroup Name="@Guid.NewGuid().ToString()" Options="@question.Options" />
+                </div>
+            </div>
+        </li>
     }
-</div>
-
-<div>
-    Answer;
-
+</ul>
+<br />
+<form>
     @foreach (var answer in Puzzle.Answers)
     {
-        <label><input type="number" @bind-value="answer.Value" />@answer.Description</label>
+        <div class="form-group col-md-6 col-sm-12">
+            <label>@answer.Description</label>
+            <input type="number" class="form-control" @bind-value="answer.Value" />
+        </div>
     }
     <div class="message-out">@Message</div>
-    <button @onclick="Validate">Complete</button>
-</div>
+    <button class="btn btn-success" type="button" @onclick="Validate">Complete</button>
+</form>
 
 @code {
 

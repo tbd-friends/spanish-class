@@ -2,7 +2,8 @@
 @using site.Models
 @if (CurrentPuzzle != null)
 {
-    switch (CurrentPuzzle.Type)
+    <h3>@CurrentPuzzle.Name</h3>
+    @switch (CurrentPuzzle.Type)
     {
         case "AorB":
             <AorB OnComplete="OnPuzzleComplete" Puzzle="(AorBPuzzle)CurrentPuzzle" />

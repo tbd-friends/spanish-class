@@ -24,5 +24,5 @@
 
 @if (IsComplete)
 {
-    <button @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
+    <button class="btn btn-success"  @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
 }

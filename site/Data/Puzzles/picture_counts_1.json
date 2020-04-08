@@ -1,5 +1,6 @@
-{
+﻿{
   "type": "PictureCounts",
+  "name": "Solve the sequence", 
   "text": "<div>&quot;Hi Maria, I'm on the way to your house. I'm following the instructions you gave me. I've already passed the two story brown house, and am passing the orange house now.&quot;</div><div>&quot;Good, keep on going straight for a half mile.  Let me know when you see the Martinez' house.&quot;</div><div>&quot;How will I know which house that is?&quot;</div><div>&quot;Oh, you'll know it.  They have a huge tree and small statues in their lawn. You can't miss it,&quot; laughs Maria.</div><div>Angela walks on the sidewalk and sings.  She says, &quot;What a green house!  It looks like a leprechaun lives there - with all those statues.&quot;</div><div>&quot;It's a cute house though.  Turn right at the end of the street.  Then you should see the Perez house on your left.  My house is across the street from the Perez family.&quot;</div><div>Angela walks more.  After a few minutes she says, &quot;There's a yellow house, a blue house and a beige house.  Which one is the Perez house? I have to cross the street there, right?&quot;</div><div>&quot;Yes, cross the street at the blue house, and then the one with the red flowers is my house. See you in a few minutes.&quot;</div>", 
   "key": [ "3", "5", "2" ],
   "options": [

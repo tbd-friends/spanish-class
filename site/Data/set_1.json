@@ -2,8 +2,6 @@
   "name": "Puzzle Set 1",
   "description": "",
   "puzzles": [
-    "drag_and_drop_1.json",
-    "past_present_1.json",
-    "picture_counts_1.json"
+    "drag_and_drop_1.json"
   ]
 }

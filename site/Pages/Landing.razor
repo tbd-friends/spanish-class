@@ -6,10 +6,10 @@
     <EditForm Model="@Model" OnValidSubmit="HandleValidSubmit">
         <DataAnnotationsValidator />
         <ValidationSummary />
-        <div>
+        <div class="form-group">
             <label for="name">Name</label>
-            <input type="text" id="name" @bind="Model.Name" />
+            <input type="text" class="form-control" id="name" @bind="Model.Name" />
         </div>
-        <button type="submit">Begin</button>
+        <button class="btn btn-primary" type="submit">Begin</button>
     </EditForm>
 </div>

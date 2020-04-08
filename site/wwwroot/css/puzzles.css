@@ -1,4 +1,8 @@
-﻿.answers {
+﻿.puzzle-group {
+    margin: 0px auto;
+}
+
+.answers {
     background-color: rgba(0, 255, 0, 0.1);
     border: 1px solid #f0fff0;
     width: 100%;
@@ -15,12 +19,9 @@
         display: flex;
     }
 
-.prompts {
+.prompts .prompt {
+    line-height: 1.4em;
 }
-
-    .prompts .prompt {
-        line-height: 1.4em;
-    }
 
 .drag-drop-puzzle {
     display: flex;
@@ -30,19 +31,7 @@
         flex: .2;
     }
 
-.word {
-    background: #c1b1d1;
-    border: 2px solid #000;
-    border-radius: .4em;
-    height: 1.6em;
-    padding: 4px;
-    font-weight: bold;
-    line-height: 1;
-    margin: 5px auto;
-    width: 80%;
-}
-
-.drag-drop-puzzle .puzzle-source {
-    flex: .8;
-    position: relative;
-}
+    .drag-drop-puzzle .puzzle-source {
+        flex: .8;
+        position: relative;
+    }

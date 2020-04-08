@@ -1,5 +1,6 @@
-{
+﻿{
   "type": "DragAndDrop",
+  "name": "Match the room and the chore", 
   "style": {
     "background": "url(css/images/House.png) no-repeat",
     "width": "1020px",
@@ -17,12 +18,12 @@
         "border": "1px solid #000"
       },
       "requires": [
-        "bedroom",
-        "make bed"
+        "dormitorio",
+        "hacer la cama"
       ]
     },
     {
-      "name": "movieroom",
+      "name": "kitchen",
       "style": {
         "position": "absolute",
         "top": "205px",
@@ -32,8 +33,8 @@
         "border": "1px solid #000"
       },
       "requires": [
-        "movie room",
-        "dusting"
+        "la cocina",
+        "cocinar"
       ]
     },
     {
@@ -47,8 +48,8 @@
         "border": "1px solid #000"
       },
       "requires": [
-        "living room",
-        "vacuuming"
+        "la sala",
+        "pasar la aspiradora"
       ]
     },
     {
@@ -62,19 +63,19 @@
         "border": "1px solid #000"
       },
       "requires": [
-        "bathroom",
-        "clean shower"
+        "el baño",
+        "limpiar la ducha"
       ]
     }
   ],
   "dictionary": [
-    "bedroom",
-    "make bed",
-    "movie room",
-    "dusting",
-    "living room",
-    "vacuuming",
-    "bathroom",
-    "clean shower"
+    "dormitorio",
+    "hacer la cama",
+    "la cocina",
+    "cocinar",
+    "la sala",
+    "pasar la aspiradora",
+    "el baño",
+    "limpiar la ducha"
   ]
 }
