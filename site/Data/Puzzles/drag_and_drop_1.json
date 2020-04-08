@@ -3,8 +3,8 @@
   "name": "Match the room and the chore", 
   "style": {
     "background": "url(css/images/House.png) no-repeat",
-    "width": "1020px",
-    "height": "900px"
+    "width": "800px",
+    "height": "620px"
   },
   "zones": [
     {
@@ -18,7 +18,7 @@
         "border": "1px solid #000"
       },
       "requires": [
-        "dormitorio",
+        "el dormitorio",
         "hacer la cama"
       ]
     },
@@ -69,7 +69,7 @@
     }
   ],
   "dictionary": [
-    "dormitorio",
+    "el dormitorio",
     "hacer la cama",
     "la cocina",
     "cocinar",

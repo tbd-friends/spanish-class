@@ -18,11 +18,11 @@
     @((MarkupString)Puzzle.Text)
 </div>
 
-<Dropzone class="answers" Name="Answers">
-    &nbsp;
-</Dropzone>
+<Dropzone class="answers bg-dark" Name="Answers">
 
+</Dropzone>
+<br />
 @if (IsComplete)
 {
-    <button class="btn btn-success"  @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
-}
+    <button class="btn btn-success" @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
+} 

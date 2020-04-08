@@ -30,10 +30,13 @@
     }
   ],
   "style": {
-    "background": "url('css/images/house.jpg') no-repeat",
+    "background": "url('css/images/home_t.png') no-repeat",
     "width": "120px",
     "height": "120px",
     "font-size": "1.3em",
-    "font-weight": "bolder"
+    "font-weight": "bolder",
+    "display": "flex",
+    "justify-content": "center",
+    "align-items": "center" 
   }  
 }

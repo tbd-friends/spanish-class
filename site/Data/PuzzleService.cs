@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using site.Infrastructure;
@@ -29,7 +30,7 @@ namespace site.Data
         {
             var results =
                 from f in paths
-                let content = File.ReadAllText(f)
+                let content = File.ReadAllText(f, Encoding.GetEncoding(1252))
                 let puzzle = JsonConvert.DeserializeObject<Puzzle>(content)
                 select new
                 {

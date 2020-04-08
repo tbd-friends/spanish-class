@@ -2,34 +2,31 @@
 @using site.Models
 @using Blazor.DragDrop.Core;
 @using site.Infrastructure
-<div class="container">
-    <div class="row">
-        <div class="drag-drop-puzzle">
-            <div class="word-gutter">
-                <Dropzone Name="gutter">
-                    @foreach (var word in Puzzle.Dictionary.Randomize())
-                    {
-                        <Draggable Tag="word"><div class="badge badge-primary"><span style="font-size: 1.75em;">@word</span></div></Draggable>
-                    }
+<div class="row">
+    <div class="col-lg-3 col-sm-12">
+        <Dropzone Name="gutter">
+            @foreach (var word in Puzzle.Dictionary.Randomize())
+            {
+                <Draggable Tag="word"><div class="badge badge-primary"><span style="font-size: 1.75em;">@word</span></div></Draggable>
+            }
+        </Dropzone>
+    </div>
+    <div class="col-lg-9 col-sm-12" style="@Style.FromDictionary(Puzzle.Style)">
+        @foreach (var zone in Puzzle.Zones)
+        {
+            <div style="@Style.FromDictionary(zone.Style)">
+                <Dropzone Name="@zone.Name" MaxItems="@zone.Requires.Count()">
+                    &nbsp;
                 </Dropzone>
             </div>
-
-            <div class="puzzle-source" style="@Style.FromDictionary(Puzzle.Style)">
-                @foreach (var zone in Puzzle.Zones)
-                {
-                    <div style="@Style.FromDictionary(zone.Style)">
-                        <Dropzone Name="@zone.Name" MaxItems="@zone.Requires.Count()">
-                            &nbsp;
-                        </Dropzone>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        @if (IsComplete)
-        {
-            <button class="btn btn-success" @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
         }
     </div>
 </div>
+@if (IsComplete)
+{
+    <div class="row">
+        <div class="col align-self-end">
+            <button class="btn btn-success" @onclick="@(() => OnComplete.InvokeAsync(this))">Complete</button>
+        </div>
+    </div>
+}

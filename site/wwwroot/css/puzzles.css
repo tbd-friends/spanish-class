@@ -3,8 +3,6 @@
 }
 
 .answers {
-    background-color: rgba(0, 255, 0, 0.1);
-    border: 1px solid #f0fff0;
     width: 100%;
     height: 100px;
     display: flex;
@@ -12,7 +10,7 @@
 
 .houses {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 }
 
     .houses .draggable {
@@ -22,16 +20,3 @@
 .prompts .prompt {
     line-height: 1.4em;
 }
-
-.drag-drop-puzzle {
-    display: flex;
-}
-
-    .drag-drop-puzzle .word-gutter {
-        flex: .2;
-    }
-
-    .drag-drop-puzzle .puzzle-source {
-        flex: .8;
-        position: relative;
-    }
