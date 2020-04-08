@@ -1,7 +1,7 @@
 {
   "type": "DragAndDrop",
   "style": {
-    "background": "url(css/images/house_w_rooms.jpg) no-repeat",
+    "background": "url(css/images/House.png) no-repeat",
     "width": "1020px",
     "height": "900px"
   },
@@ -10,10 +10,10 @@
       "name": "bedroom",
       "style": {
         "position": "absolute",
-        "top": "250px",
-        "left": "250px",
-        "width": "280px",
-        "height": "130px",
+        "top": "205px",
+        "left": "200px",
+        "width": "225px",
+        "height": "115px",
         "border": "1px solid #000"
       },
       "requires": [
@@ -25,10 +25,10 @@
       "name": "movieroom",
       "style": {
         "position": "absolute",
-        "top": "250px",
-        "left": "540px",
-        "width": "275px",
-        "height": "130px",
+        "top": "205px",
+        "left": "430px",
+        "width": "225px",
+        "height": "115px",
         "border": "1px solid #000"
       },
       "requires": [
@@ -40,10 +40,10 @@
       "name": "living-room",
       "style": {
         "position": "absolute",
-        "top": "400px",
-        "left": "250px",
-        "width": "280px",
-        "height": "125px",
+        "top": "330px",
+        "left": "200px",
+        "width": "225px",
+        "height": "115px",
         "border": "1px solid #000"
       },
       "requires": [
@@ -55,10 +55,10 @@
       "name": "bathroom",
       "style": {
         "position": "absolute",
-        "top": "400px",
-        "left": "540px",
-        "width": "275px",
-        "height": "125px",
+        "top": "330px",
+        "left": "430px",
+        "width": "225px",
+        "height": "115px",
         "border": "1px solid #000"
       },
       "requires": [

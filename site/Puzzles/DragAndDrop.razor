@@ -5,7 +5,7 @@
 <div class="drag-drop-puzzle">
     <div class="word-gutter">
         <Dropzone Name="gutter">
-            @foreach (var word in Puzzle.Dictionary)
+            @foreach (var word in Puzzle.Dictionary.Randomize())
             {
                 <Draggable Tag="word"><div class="word">@word</div></Draggable>
             }
